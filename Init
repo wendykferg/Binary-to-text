@@ -1,0 +1,22 @@
+def binaryTOTEXT():
+    # arrays containing all letters (uppercase AND lowercase) and numbers (0 to 9)
+    list1 = []
+    alpha_num = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l","m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3","4","5","6","7","8","9","0"]
+    convertCOUNTER, loop, finalString = 0, True, ""
+    for i in range(len(binaryRECEIVED)):
+        test = (bin(ord(alpha_num[convertCOUNTER])))
+        new = test.replace("b","")
+        if binaryRECEIVED[convertCOUNTER] == new:
+            temp = int(binaryRECEIVED[convertCOUNTER], 2)
+            if temp >= 48 and temp <= 57:
+                finalString = finalString + ord(temp)
+            else:
+                temp2 = chr(temp)
+                finalString = finalString + temp2
+            convertCOUNTER += 1
+            if i == (len(binaryRECEIVED)-1):
+                for chars1 in finalString:
+                    print(chars1, end="")
+                    sys.stdout.flush()
+                    sleep(0.3)
+                quit()
